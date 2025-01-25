@@ -1,0 +1,43 @@
+>>> sekwencja_dna1 = "ATCGGCTT"
+>>> sekwencja_dna2 = "AGCTAGCG"
+>>> sekwencja_dna_polaczona = sekwencja_dna1 + sekwencja_dna2 #konkatenacja dwóch łańcuchów w jeden
+>>> print(sekwencja_dna_polaczona)
+ATCGGCTTAGCTAGCG
+>>> gen = "ALK"
+>>> mutacja = "p.F1174L"
+>>> opis = "W genie {gen} wykryto mutację {mutacja}"
+>>> print(opis)
+W genie {gen} wykryto mutację {mutacja}
+>>> opis = f"W genie {gen} wykryto mutację {mutacja}"
+>>> print(opis)
+W genie ALK wykryto mutację p.F1174L
+>>>
+>>> gen = "EGFR"
+>>> mutacja = "c.2369C>T"
+>>> opis = "W genie {} wykryto mutację {}".format(gen, mutacja)
+>>> print(opis)
+W genie EGFR wykryto mutację c.2369C>T
+>>>
+>>> gen = "BRAF"
+>>> mutacja = "p.V600E"
+>>> opis = "W genie %s wykryto mutację %s" % (gen, mutacja)
+>>> print(opis)
+W genie BRAF wykryto mutację p.V600E
+>>> fragment_1 = sekwencja_dna_polaczona[0:7]
+>>> fragment_2 = sekwencja_dna_polaczona[7:14}
+  File "<python-input-47>", line 1
+    fragment_2 = sekwencja_dna_polaczona[7:14}
+                                             ^
+SyntaxError: closing parenthesis '}' does not match opening parenthesis '['
+>>> fragment_2 = sekwencja_dna_polaczona[7:14]
+>>> fragment_3 = sekwencja_dna_polaczona[-7:]
+>>> print("\nSzczegółowa analiza:")
+
+Szczegółowa analiza:
+>>> print("\t1. Pierwszy fragment sekwencji:\"{}\"".format(fragment_1))
+        1. Pierwszy fragment sekwencji:"ATCGGCT"
+>>> print("\t2. Drugi fragment sekwencji:\"{}\"".format(fragment_2))
+        2. Drugi fragment sekwencji:"TAGCTAG"
+>>> print("\t3. Trzeci fragment sekwencji: \"{}\"".format(fragment_3))
+        3. Trzeci fragment sekwencji: "GCTAGCG"
+>>>

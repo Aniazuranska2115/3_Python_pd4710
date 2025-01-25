@@ -1,0 +1,13 @@
+>>> sekwencja_dna = str("ATTCGCACG")
+>>> liczba_genow = int(1250)
+>>> procent_gc = float(55.5)
+>>> nukleotydy = ['A', 'T', 'C', 'G']
+>>> print(sekwencja_dna, type(sekwencja_dna))
+ATTCGCACG <class 'str'>
+>>> dna_list = list(sekwencja_dna)
+>>> print(dna_list, type(dna_list))
+['A', 'T', 'T', 'C', 'G', 'C', 'A', 'C', 'G'] <class 'list'>
+>>> x = str("ATTCGCACG")  # Przypisuje zmiennej x typ str (ciąg znaków)
+>>> print(x, type(x)) #wynik: ATTCGCACG <class 'str'>
+ATTCGCACG <class 'str'>
+>>>

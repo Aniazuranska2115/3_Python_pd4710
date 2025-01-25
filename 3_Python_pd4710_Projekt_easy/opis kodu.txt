@@ -1,0 +1,83 @@
+# Funkcja odczytująca plik i wyciągająca sekwencje oraz ich nazwy
+def read_sequences_from_file(file_path):
+    """
+    Ta funkcja otwiera plik, czyta wszystkie linie i zbiera sekwencje DNA.
+    Jeśli linia zaczyna się od '>', oznacza nazwę sekwencji.
+    Kolejne linie to same litery (czyli sekwencje DNA).
+    """
+
+# Funkcja sprawdzająca, czy sekwencje są poprawne
+def validate_sequence(sequence):
+    """
+    Ta funkcja sprawdza, czy sekwencja składa się TYLKO z liter A, C, T, G.
+    Jeśli tak, zwraca True (czyli poprawna). Jeśli nie, zwraca False.
+    """
+
+# Funkcja usuwająca duplikaty i błędne sekwencje
+def clean_sequences(sequences):
+    """
+    Ta funkcja usuwa:
+    - Sekwencje z literami, których nie powinno być (np. X, Y, Z).
+    - Sekwencje, które się powtarzają.
+    Zwraca nowy słownik z poprawnymi sekwencjami.
+    """
+
+# Funkcja zapisująca sekwencje do pliku
+def save_sequences_to_file(sequences, file_path):
+    """
+    Ta funkcja zapisuje każdą sekwencję z nazwą do nowego pliku.
+    Każda sekwencja zaczyna się od '>', a w kolejnej linii jest DNA.
+    """
+
+# Funkcja licząca parametry sekwencji
+def calculate_sequence_stats(sequence):
+    """
+    Ta funkcja oblicza różne ciekawe rzeczy o sekwencji:
+    - Długość sekwencji (ile ma liter).
+    - Zawartość GC (ile procent liter to G i C).
+    """
+
+# Funkcja zamieniająca sekwencje na DataFrame
+def sequences_to_dataframe(sequences):
+    """
+    Ta funkcja zamienia słownik sekwencji na tabelę (DataFrame).
+    W tej tabeli każda kolumna ma ciekawe informacje:
+    - Nazwę sekwencji
+    - Jej długość
+    - Zawartość GC
+    """
+
+
+# Funkcja tworząca wizualizacje
+def visualize_data(df):
+    """
+    Ta funkcja tworzy wykresy, żeby zobaczyć dane w ciekawy sposób.
+    - Rysuje np. histogram długości sekwencji.
+    - Pokazuje zawartość GC jako wykres słupkowy.
+    - Tworzy wykres kołowy dla różnych długości.
+    """
+
+    # Histogram długości sekwencji
+    plt.figure(figsize=(10, 6))
+    plt.hist(df["length"], bins=10, color="blue", alpha=0.7)
+    plt.title("Rozkład długości sekwencji")
+    plt.xlabel("Długość")
+    plt.ylabel("Liczba sekwencji")
+    plt.show()
+
+    # Wykres słupkowy zawartości GC
+    plt.figure(figsize=(10, 6))
+    plt.bar(df["name"], df["gc_content"], color="green")
+    plt.title("Zawartość GC w każdej sekwencji")
+    plt.xlabel("Nazwa sekwencji")
+    plt.ylabel("Zawartość GC (%)")
+    plt.xticks(rotation=90)
+    plt.show()
+
+    # Wykres kołowy długości sekwencji
+    plt.figure(figsize=(8, 8))
+    length_groups = df["length"].apply(lambda x: "Krótkie" if x < 100 else "Długie")
+    length_groups.value_counts().plot.pie(autopct="%1.1f%%", colors=["orange", "cyan"])
+    plt.title("Proporcje długości sekwencji")
+    plt.ylabel("")
+    plt.show()

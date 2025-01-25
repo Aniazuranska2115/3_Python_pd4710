@@ -1,0 +1,22 @@
+>>> gen = "MYC"
+>>> eksony = 3
+>>> dlugosc_genomu = 3200.5
+>>>
+>>> print("Gen:", gen)
+Gen: MYC
+>>> print("Liczba eksonów:", eksony)
+Liczba eksonów: 3
+>>> print("Długość genomu (Mb):", dlugosc_genomu)
+Długość genomu (Mb): 3200.5
+>>>
+>>> print(type(gen)) # <class 'str'>
+<class 'str'>
+>>> print(type(eksony)) # <class 'int'>
+<class 'int'>
+>>> print(type(dlugosc_genomu)) # <class 'float'>
+<class 'float'>
+>>> opis = 'koduje białko należące do rodziny czynników transkrypcyjnych zawierających motyw\ suwaka leucynowego'
+>>> print(gen + ' ' + opis)
+MYC koduje białko należące do rodziny czynników transkrypcyjnych zawierających motyw suwaka leucynowego
+>>> #
+>>> # Gen MYC koduje geny regulatorowe odpowiedzialne za proliferację, metabolizm komórkowy, angiogen\ezę oraz zdolność do tworzenia przerzutów
